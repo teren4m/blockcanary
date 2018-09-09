@@ -23,6 +23,3 @@ dependencies {
     compile project(':blockcanary-core')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
-repositories {
-    mavenCentral()
-}
