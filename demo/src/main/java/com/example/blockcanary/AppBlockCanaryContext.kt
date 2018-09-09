@@ -13,7 +13,7 @@
  */
 package com.example.blockcanary
 
-import com.github.moduth.blockcanary.BlockCanaryContext
+import com.github.teren4m.blockcanary.BlockCanaryContext
 
 class AppBlockCanaryContext : BlockCanaryContext() {
 

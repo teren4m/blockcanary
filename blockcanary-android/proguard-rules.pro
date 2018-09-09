@@ -17,4 +17,4 @@
 #}
 
 # Need if enable display in proguarded package
--keep class com.github.moduth.blockcanary.ui.Notifier
+-keep class com.github.teren4m.blockcanary.ui.Notifier
