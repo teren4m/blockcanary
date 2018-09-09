@@ -11,25 +11,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.blockcanary;
+package com.example.blockcanary
 
-import android.app.Application;
-import android.content.Context;
+import android.app.Application
+import android.content.Context
 
-import com.github.moduth.blockcanary.BlockCanary;
+import com.github.moduth.blockcanary.BlockCanary
 
-public class DemoApplication extends Application {
+class DemoApplication : Application() {
 
-    private static Context sContext;
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        sContext = this;
-        BlockCanary.install(this, new AppBlockCanaryContext()).start();
+    override fun onCreate() {
+        super.onCreate()
+        appContext = this
+        BlockCanary.install(this, AppBlockCanaryContext()).start()
     }
 
-    public static Context getAppContext() {
-        return sContext;
+    companion object {
+
+        var appContext: Context? = null
+            private set
     }
 }

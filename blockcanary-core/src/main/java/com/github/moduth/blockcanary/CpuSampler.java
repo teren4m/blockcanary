@@ -102,41 +102,41 @@ class CpuSampler extends Sampler {
 
     @Override
     protected void doSample() {
-        BufferedReader cpuReader = null;
-        BufferedReader pidReader = null;
-        try {
-            cpuReader = new BufferedReader(new InputStreamReader(
-                    new FileInputStream("/proc/stat")), 1000);
-            String cpuRate = cpuReader.readLine();
-            if (cpuRate == null) {
-                cpuRate = "";
-            }
-
-            if (mPid == 0) {
-                mPid = android.os.Process.myPid();
-            }
-            pidReader = new BufferedReader(new InputStreamReader(
-                    new FileInputStream("/proc/" + mPid + "/stat")), 1000);
-            String pidCpuRate = pidReader.readLine();
-            if (pidCpuRate == null) {
-                pidCpuRate = "";
-            }
-
-            parseCpuRate(cpuRate, pidCpuRate);
-        } catch (Throwable ex) {
-            Log.e(TAG, "doSample: ", ex);
-        } finally {
-            try {
-                if (cpuReader != null) {
-                    cpuReader.close();
-                }
-                if (pidReader != null) {
-                    pidReader.close();
-                }
-            } catch (IOException e) {
-                Log.e(TAG, "doSample: ", e);
-            }
-        }
+//        BufferedReader cpuReader = null;
+//        BufferedReader pidReader = null;
+//        try {
+//            cpuReader = new BufferedReader(new InputStreamReader(
+//                    new FileInputStream("/proc/stat")), 1000);
+//            String cpuRate = cpuReader.readLine();
+//            if (cpuRate == null) {
+//                cpuRate = "";
+//            }
+//
+//            if (mPid == 0) {
+//                mPid = android.os.Process.myPid();
+//            }
+//            pidReader = new BufferedReader(new InputStreamReader(
+//                    new FileInputStream("/proc/" + mPid + "/stat")), 1000);
+//            String pidCpuRate = pidReader.readLine();
+//            if (pidCpuRate == null) {
+//                pidCpuRate = "";
+//            }
+//
+//            parseCpuRate(cpuRate, pidCpuRate);
+//        } catch (Throwable ex) {
+//            Log.e(TAG, "doSample: ", ex);
+//        } finally {
+//            try {
+//                if (cpuReader != null) {
+//                    cpuReader.close();
+//                }
+//                if (pidReader != null) {
+//                    pidReader.close();
+//                }
+//            } catch (IOException e) {
+//                Log.e(TAG, "doSample: ", e);
+//            }
+//        }
     }
 
     private void reset() {

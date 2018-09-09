@@ -42,7 +42,6 @@ public final class Block {
     public static final String KEY_QUA = "qualifier";
     public static final String KEY_MODEL = "model";
     public static final String KEY_API = "apilevel";
-    public static final String KEY_IMEI = "imei";
     public static final String KEY_UID = "uid";
     public static final String KEY_CPU_CORE = "cpuCore";
     public static final String KEY_CPU_BUSY = "cpubusy";
@@ -64,7 +63,6 @@ public final class Block {
     public String qualifier;
     public String model;
     public String apiLevel = "";
-    public String imei = "";
     public String uid;
     public int cpuCoreNum;
     public String processName;
@@ -104,16 +102,6 @@ public final class Block {
                 Log.e(TAG, NEW_INSTANCE, e);
             }
         }
-
-        if (block.imei == null || block.imei.length() == 0) {
-            try {
-                TelephonyManager mTManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
-                block.imei = mTManager.getDeviceId();
-            } catch (Exception e) {
-                Log.e(TAG, NEW_INSTANCE, e);
-                block.imei = EMPTY_IMEI;
-            }
-        }
         block.qualifier = BlockCanaryCore.getContext().getQualifier();
         block.apiLevel = Build.VERSION.SDK_INT + " " + VERSION.RELEASE;
         block.model = Build.MODEL;
@@ -148,8 +136,6 @@ public final class Block {
                     block.model = line.split(KV)[1];
                 } else if (line.startsWith(KEY_API)) {
                     block.apiLevel = line.split(KV)[1];
-                } else if (line.startsWith(KEY_IMEI)) {
-                    block.imei = line.split(KV)[1];
                 } else if (line.startsWith(KEY_UID)) {
                     block.uid = line.split(KV)[1];
                 } else if (line.startsWith(KEY_CPU_CORE)) {
@@ -258,7 +244,6 @@ public final class Block {
         basicSb.append(KEY_QUA).append(KV).append(qualifier).append(separator);
         basicSb.append(KEY_VERSION_NAME).append(KV).append(versionName).append(separator);
         basicSb.append(KEY_VERSION_CODE).append(KV).append(versionCode).append(separator);
-        basicSb.append(KEY_IMEI).append(KV).append(imei).append(separator);
         basicSb.append(KEY_UID).append(KV).append(uid).append(separator);
         basicSb.append(KEY_NETWORK).append(KV).append(network).append(separator);
         basicSb.append(KEY_MODEL).append(KV).append(Build.MODEL).append(separator);

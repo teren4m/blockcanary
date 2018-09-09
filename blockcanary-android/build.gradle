@@ -1,13 +1,12 @@
 apply plugin: 'com.android.library'
-apply from: 'gradle-mvn-push.gradle'
+apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion LIBRARY_COMPILE_SDK_VERSION
-    buildToolsVersion LIBRARY_BUILD_TOOLS_VERSION
+    compileSdkVersion 28
 
     defaultConfig {
-        minSdkVersion LIBRARY_MIN_SDK_VERSION
-        targetSdkVersion LIBRARY_TARGET_SDK_VERSION
+        minSdkVersion 17
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
     }
@@ -17,9 +16,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    buildToolsVersion '27.0.3'
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
     compile project(':blockcanary-core')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
 }

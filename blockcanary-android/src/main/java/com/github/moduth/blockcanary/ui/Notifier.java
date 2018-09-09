@@ -39,7 +39,6 @@ public class Notifier implements OnBlockEventInterceptor {
             notification.when = System.currentTimeMillis();
             notification.flags |= Notification.FLAG_AUTO_CANCEL;
             notification.defaults = Notification.DEFAULT_SOUND;
-            notification.setLatestEventInfo(context, contentTitle, contentText, pendingIntent);
         } else {
             Notification.Builder builder = new Notification.Builder(context)
                     .setSmallIcon(R.drawable.block_canary_notification)
