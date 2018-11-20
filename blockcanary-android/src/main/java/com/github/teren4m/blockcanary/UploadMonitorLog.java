@@ -15,11 +15,11 @@ package com.github.teren4m.blockcanary;
 
 import android.util.Log;
 
+import com.github.teren4m.blockcanary.log.BlockCanaryInternals;
+
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import com.github.teren4m.blockcanary.log.BlockCanaryInternals;
 
 /**
  * Upload monitor log.

@@ -15,10 +15,10 @@ package com.github.teren4m.blockcanary.log;
 
 import android.os.Environment;
 
+import com.github.teren4m.blockcanary.BlockCanaryCore;
+
 import java.io.File;
 import java.io.FilenameFilter;
-
-import com.github.teren4m.blockcanary.BlockCanaryCore;
 
 /**
  * @author markzhai on 15/9/27.

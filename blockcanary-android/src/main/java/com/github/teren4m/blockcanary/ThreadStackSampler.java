@@ -13,12 +13,12 @@
  */
 package com.github.teren4m.blockcanary;
 
+import com.github.teren4m.blockcanary.log.Block;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Locale;
-
-import com.github.teren4m.blockcanary.log.Block;
 
 /**
  * {@link ThreadStackSampler} dumps main thread stack and saves last recent stack piece locally.

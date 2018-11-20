@@ -15,9 +15,9 @@ package com.github.teren4m.blockcanary;
 
 import android.os.Looper;
 
-import java.util.ArrayList;
-
 import com.github.teren4m.blockcanary.log.Block;
+
+import java.util.ArrayList;
 
 /**
  * BlockCanary internal core.

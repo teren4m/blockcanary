@@ -19,14 +19,14 @@ import android.os.Build;
 import android.os.Build.VERSION;
 import android.util.Log;
 
+import com.github.teren4m.blockcanary.BlockCanaryCore;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-
-import com.github.teren4m.blockcanary.BlockCanaryCore;
 
 /**
  * @author markzhai on 15/9/27.
@@ -102,7 +102,7 @@ public final class Block {
             }
         }
         block.qualifier = BlockCanaryCore.getContext().getQualifier();
-        block.apiLevel = Build.VERSION.SDK_INT + " " + VERSION.RELEASE;
+        block.apiLevel = VERSION.SDK_INT + " " + VERSION.RELEASE;
         block.model = Build.MODEL;
         block.uid = BlockCanaryCore.getContext().getUid();
         block.cpuCoreNum = PerformanceUtils.getNumCores();

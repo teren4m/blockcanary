@@ -15,13 +15,13 @@ package com.github.teren4m.blockcanary;
 
 import android.util.Log;
 
+import com.github.teren4m.blockcanary.log.BlockCanaryInternals;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
 import java.text.SimpleDateFormat;
-
-import com.github.teren4m.blockcanary.log.BlockCanaryInternals;
 
 /**
  * Log writer which runs in standalone thread.

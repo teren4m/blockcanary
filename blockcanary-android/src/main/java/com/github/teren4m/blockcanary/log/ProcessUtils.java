@@ -16,9 +16,9 @@ package com.github.teren4m.blockcanary.log;
 import android.app.ActivityManager;
 import android.content.Context;
 
-import java.util.List;
-
 import com.github.teren4m.blockcanary.BlockCanaryCore;
+
+import java.util.List;
 
 public class ProcessUtils {
 

@@ -17,14 +17,14 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.util.Log;
 
+import com.github.teren4m.blockcanary.BlockCanaryCore;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileFilter;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.regex.Pattern;
-
-import com.github.teren4m.blockcanary.BlockCanaryCore;
 
 public class PerformanceUtils {
     private static final String TAG = "PerformanceUtils";

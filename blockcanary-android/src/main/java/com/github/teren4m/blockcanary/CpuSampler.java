@@ -13,11 +13,11 @@
  */
 package com.github.teren4m.blockcanary;
 
+import com.github.teren4m.blockcanary.log.Block;
+
 import java.text.SimpleDateFormat;
 import java.util.LinkedHashMap;
 import java.util.Map;
-
-import com.github.teren4m.blockcanary.log.Block;
 
 /**
  * CPU Sampler, dumps cpu usage information.
